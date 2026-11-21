@@ -1,10 +1,10 @@
 :root {
-  --accent: #6c5ce7;
-  --accent-dark: #5143c4;
+  --accent: #ee6ec9;
+  --accent-dark: #d44fb0;
   --ink: #1e1e2f;
-  --soft: #f6f5ff;
+  --soft: #f3f8fc;
   --bs-primary: var(--accent);
-  --bs-primary-rgb: 108, 92, 231;
+  --bs-primary-rgb: 238, 110, 201;
   --bs-link-color: var(--accent);
   --bs-link-hover-color: var(--accent-dark);
 }
@@ -63,42 +63,81 @@ body {
 
 /* Navbar */
 .site-nav {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: transparent;
+  padding: 1.5rem 2.5rem;
 }
 
-.site-nav .navbar-brand {
-  font-weight: 800;
-  letter-spacing: -0.02em;
+.site-nav .nav-link {
+  color: var(--accent);
+  font-style: italic;
+  font-size: 1.6rem;
+  padding: 0 1.5rem;
+}
+
+.site-nav .nav-link:hover {
+  color: var(--accent-dark);
+}
+
+.logo-star {
+  width: 130px;
+  height: 130px;
+  display: block;
 }
 
 /* Hero */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-top: 5rem;
-  background: radial-gradient(
-      circle at 85% 15%,
-      rgba(108, 92, 231, 0.18),
-      transparent 45%
-    ),
-    radial-gradient(circle at 10% 90%, rgba(0, 184, 148, 0.14), transparent 40%);
+  align-items: flex-end;
+  padding: 6rem 0 4rem;
+  color: var(--accent);
+  background: radial-gradient(ellipse at 0% 100%, #c9effb 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 0%, #bcd5e2 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 0%, #fdf6f0 0%, transparent 50%), #eef3f7;
 }
 
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+/* film grain */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-.hero .gradient-text {
-  background: linear-gradient(90deg, var(--accent), #00b894);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero-name {
+  font-family: var(--font-display), cursive;
+  font-weight: 400;
+  font-size: clamp(6rem, 24vw, 22rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-name .sparkle {
+  position: absolute;
+  width: 0.28em;
+  height: 0.28em;
+}
+
+.hero-sub {
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  margin: 1rem 0 0;
+}
+
+.hero-sub span {
+  display: block;
+}
+
+.hero-sub span + span {
+  padding-left: 12%;
 }
 
 .avatar {
@@ -153,7 +192,7 @@ body {
 }
 
 .tag {
-  background: rgba(108, 92, 231, 0.1);
+  background: rgba(238, 110, 201, 0.12);
   color: var(--accent-dark);
   font-weight: 600;
 }

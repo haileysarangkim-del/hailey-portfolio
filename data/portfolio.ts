@@ -8,6 +8,7 @@ export interface Profile {
   name: string;
   role: string;
   tagline: string;
+  subtagline: string;
   email: string;
   location: string;
   about: string[];
@@ -30,9 +31,9 @@ export interface Project {
 
 export const profile: Profile = {
   name: "Hailey Kim",
-  role: "Developer & Designer",
-  tagline:
-    "I build clean, thoughtful web experiences that are fast, accessible and a little bit delightful.",
+  role: "Marketing, design & HCI",
+  tagline: "third year at uc san diego,",
+  subtagline: "studying marketing, design, and human interaction",
   email: "hello@example.com",
   location: "California, USA",
   about: [
