@@ -65,14 +65,14 @@ body {
 /* Navbar */
 .site-nav {
   background: transparent;
-  padding: 1.5rem 2.5rem;
+  padding: 1.25rem 2.5rem;
 }
 
 .site-nav .nav-link {
   color: var(--accent);
   font-style: italic;
-  font-size: 1.6rem;
-  padding: 0 1.5rem;
+  font-size: 1.4rem;
+  padding: 0 1.25rem;
 }
 
 .site-nav .nav-link:hover {
@@ -80,8 +80,8 @@ body {
 }
 
 .logo-star {
-  width: 130px;
-  height: 130px;
+  width: 72px;
+  height: 72px;
   display: block;
 }
 
