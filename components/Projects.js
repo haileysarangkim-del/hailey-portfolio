@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge, Card, Col, Container, Row } from "react-bootstrap";
 import { projects } from "@/data/portfolio";
 
