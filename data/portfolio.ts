@@ -1,4 +1,34 @@
-export const profile = {
+export interface Social {
+  label: string;
+  icon: string;
+  href: string;
+}
+
+export interface Profile {
+  name: string;
+  role: string;
+  tagline: string;
+  email: string;
+  location: string;
+  about: string[];
+  socials: Social[];
+}
+
+export interface Skill {
+  name: string;
+  level: number;
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  live: string;
+  code: string;
+}
+
+export const profile: Profile = {
   name: "Hailey Kim",
   role: "Developer & Designer",
   tagline:
@@ -16,7 +46,7 @@ export const profile = {
   ],
 };
 
-export const skills = [
+export const skills: Skill[] = [
   { name: "JavaScript", level: 90 },
   { name: "React", level: 88 },
   { name: "Next.js", level: 82 },
@@ -27,7 +57,7 @@ export const skills = [
   { name: "UI Design", level: 78 },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "Project One",
     description:

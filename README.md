@@ -13,7 +13,7 @@ Open http://localhost:3000.
 
 ## Customize
 
-All of your content lives in one file: `data/portfolio.js`
+All of your content lives in one file: `data/portfolio.ts`
 (name, tagline, about text, skills, projects, social links, email).
 Colors and spacing tweaks are in `app/globals.css`.
 
@@ -22,7 +22,7 @@ Colors and spacing tweaks are in `app/globals.css`.
 ```
 app/            layout, page, global styles
 components/     NavBar, Hero, About, Skills, Projects, Contact, Footer
-data/           portfolio.js (your content)
+data/           portfolio.ts (your content)
 ```
 
 ## Deploy

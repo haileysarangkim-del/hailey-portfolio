@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { profile } from "@/data/portfolio";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setForm({ ...form, [e.target.name]: e.target.value });
 
   // Opens the visitor's email app. Swap for an API route or a form service later.
-  const onSubmit = (e) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio message from ${form.name}`);
     const body = encodeURIComponent(`${form.message}\n\nFrom: ${form.name} (${form.email})`);
