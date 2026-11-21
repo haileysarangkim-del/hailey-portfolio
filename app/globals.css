@@ -219,8 +219,7 @@ body::after {
 .marquee {
   overflow: hidden;
   padding: 0.5rem 0 1.5rem;
-  margin: 0 -2rem 1rem;
-  transform: rotate(-1.5deg);
+  margin: 0;
   color: var(--accent);
   border-block: 1px solid rgba(238, 110, 201, 0.45);
   background: rgba(255, 255, 255, 0.28);

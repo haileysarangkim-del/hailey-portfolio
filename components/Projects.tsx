@@ -1,15 +1,13 @@
 "use client";
 
 import { Badge, Card, Col, Container, Row } from "react-bootstrap";
-import Marquee from "@/components/Marquee";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
   return (
-    <section id="projects" className="section section-marquee">
-      <h2 className="visually-hidden">My work</h2>
-      <Marquee text="my work" />
-      <Container className="pt-5">
+    <section id="projects" className="section">
+      <Container>
+        <h2 className="section-title mb-5">Projects</h2>
         <Row className="g-4">
           {projects.map((p) => (
             <Col md={6} lg={4} key={p.title}>
