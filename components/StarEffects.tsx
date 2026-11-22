@@ -16,7 +16,7 @@ export default function StarEffects() {
       star.classList.add("is-spinning");
     };
     const onEnd = (e: AnimationEvent) => {
-      if (e.animationName === "star-spin") {
+      if (e.animationName.startsWith("star-spin")) {
         (e.target as Element).classList.remove("is-spinning");
       }
     };
