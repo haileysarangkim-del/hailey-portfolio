@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: #f6f1ec;
+  background: #eaf4f9;
   color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -140,7 +140,7 @@ body {
 }
 
 /* film grain */
-/* Floating background blobs */
+/* Slowly drifting color mesh: huge, very soft blobs that melt into each other */
 .bg-blobs {
   position: fixed;
   inset: 0;
@@ -151,95 +151,88 @@ body {
 
 .blob {
   position: absolute;
-  border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
-  filter: blur(90px);
-  will-change: transform, border-radius;
+  border-radius: 50%;
+  filter: blur(110px);
+  will-change: transform;
 }
 
+/* cream, top left */
 .blob-1 {
+  width: 60vmax;
+  height: 52vmax;
+  left: -22vmax;
+  top: -26vmax;
+  background: #fdf5ec;
+  animation: blob-move-1 48s ease-in-out infinite alternate;
+}
+
+/* blue-grey, top right */
+.blob-2 {
   width: 62vmax;
   height: 54vmax;
-  left: -15vmax;
-  bottom: -18vmax;
-  background: #d4ecf7;
-  animation: blob-move-1 26s ease-in-out infinite alternate,
-    blob-morph 17s ease-in-out infinite alternate;
+  right: -22vmax;
+  top: -28vmax;
+  background: #bcd4e2;
+  animation: blob-move-2 56s ease-in-out infinite alternate;
 }
 
-.blob-2 {
-  width: 56vmax;
-  height: 50vmax;
-  right: -14vmax;
-  top: -16vmax;
-  background: #cfe3ee;
-  animation: blob-move-2 30s ease-in-out infinite alternate,
-    blob-morph 21s ease-in-out infinite alternate-reverse;
-}
-
+/* bright sky blue, left middle */
 .blob-3 {
-  width: 52vmax;
-  height: 46vmax;
-  left: -10vmax;
-  top: -14vmax;
-  background: #fff6ee;
-  animation: blob-move-3 24s ease-in-out infinite alternate,
-    blob-morph 19s ease-in-out infinite alternate;
+  width: 58vmax;
+  height: 56vmax;
+  left: -28vmax;
+  top: 18vh;
+  background: #c3ecfc;
+  animation: blob-move-3 52s ease-in-out infinite alternate;
 }
 
+/* white glow, right middle */
 .blob-4 {
-  width: 34vmax;
-  height: 30vmax;
-  left: 35vw;
-  top: 30vh;
-  background: #dcf0f9;
-  opacity: 0.85;
-  animation: blob-move-4 28s ease-in-out infinite alternate,
-    blob-morph 23s ease-in-out infinite alternate-reverse;
+  width: 46vmax;
+  height: 44vmax;
+  right: -14vmax;
+  top: 32vh;
+  background: #ffffff;
+  animation: blob-move-4 44s ease-in-out infinite alternate;
 }
 
+/* pale aqua, bottom */
 .blob-5 {
-  width: 40vmax;
-  height: 36vmax;
-  right: 5vw;
-  bottom: -10vmax;
-  background: #fcefe6;
-  animation: blob-move-5 22s ease-in-out infinite alternate,
-    blob-morph 15s ease-in-out infinite alternate;
+  width: 70vmax;
+  height: 50vmax;
+  left: 0;
+  bottom: -30vmax;
+  background: #cdeefb;
+  animation: blob-move-5 60s ease-in-out infinite alternate;
 }
 
 @keyframes blob-move-1 {
   to {
-    transform: translate(26vw, -22vh) scale(1.1);
+    transform: translate(22vw, 18vh) scale(1.1);
   }
 }
 
 @keyframes blob-move-2 {
   to {
-    transform: translate(-24vw, 30vh) scale(0.95);
+    transform: translate(-20vw, 22vh) scale(1.08);
   }
 }
 
 @keyframes blob-move-3 {
   to {
-    transform: translate(50vw, 40vh) scale(1.15);
+    transform: translate(20vw, -16vh) scale(1.12);
   }
 }
 
 @keyframes blob-move-4 {
   to {
-    transform: translate(-20vw, -16vh) rotate(60deg) scale(1.1);
+    transform: translate(-24vw, -20vh) scale(1.15);
   }
 }
 
 @keyframes blob-move-5 {
   to {
-    transform: translate(-45vw, -40vh) scale(1.2);
-  }
-}
-
-@keyframes blob-morph {
-  to {
-    border-radius: 42% 58% 40% 60% / 60% 42% 58% 40%;
+    transform: translate(18vw, -12vh) scale(1.1);
   }
 }
 
