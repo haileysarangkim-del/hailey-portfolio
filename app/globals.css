@@ -585,12 +585,13 @@ body::after {
   transform-origin: center;
 }
 
-.spin-star:hover {
+.spin-star.is-spinning,
+.logo-star.is-spinning {
   animation: star-spin 0.7s ease;
 }
 
-.logo-star:hover {
-  animation: star-spin 0.7s ease;
+.logo-star.is-spinning {
+  animation-name: star-spin, star-tint;
 }
 
 @keyframes star-spin {
@@ -599,9 +600,29 @@ body::after {
   }
 }
 
+/* polygons flash the nav hover pink while they spin */
+.spin-star.is-spinning {
+  animation-name: star-spin, star-fill;
+}
+
+@keyframes star-fill {
+  20%,
+  80% {
+    fill: var(--accent-dark);
+  }
+}
+
+/* the logo is an image, so darken it slightly instead */
+@keyframes star-tint {
+  20%,
+  80% {
+    filter: brightness(0.88);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .spin-star:hover,
-  .logo-star:hover {
+  .spin-star.is-spinning,
+  .logo-star.is-spinning {
     animation: none;
   }
 }
