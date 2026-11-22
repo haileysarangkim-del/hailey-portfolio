@@ -356,8 +356,10 @@ body::after {
   position: absolute;
   inset: 8% 0 0 0;
   border-radius: 14px;
-  background: rgba(226, 95, 184, 0.55);
+  background: #e25fb8;
   border: 0;
+  /* opacity on the group, so the tab and back blend as one shape (no overlap line) */
+  opacity: 0.55;
 }
 
 .folder-back::before {
@@ -369,7 +371,7 @@ body::after {
   height: 16%;
   border: 0;
   border-radius: 12px 12px 0 0;
-  background: rgba(226, 95, 184, 0.55);
+  background: #e25fb8;
 }
 
 /* project preview peeking out of the folder */
