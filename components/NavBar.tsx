@@ -30,7 +30,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar expand="md" fixed="top" className="site-nav align-items-start">
+    <Navbar expand="md" className="site-nav align-items-start">
       <Navbar.Brand href="#home" aria-label="Home" className="p-0 m-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.svg" alt="hk" className="logo-star" />
