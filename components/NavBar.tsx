@@ -7,6 +7,7 @@ const links = [
   { href: "#about", label: "about" },
   { href: "#projects", label: "my work" },
   { href: "#skills", label: "certie" },
+  { href: "/resume.pdf", label: "resume" },
 ];
 
 export default function NavBar() {
@@ -22,7 +23,7 @@ export default function NavBar() {
       },
       { rootMargin: "-40% 0px -55% 0px" },
     );
-    links.forEach((l) => {
+    links.filter((l) => l.href.startsWith("#")).forEach((l) => {
       const el = document.querySelector(l.href);
       if (el) observer.observe(el);
     });
@@ -39,7 +40,12 @@ export default function NavBar() {
       <Navbar.Collapse id="main-nav">
         <Nav className="ms-auto">
           {links.map((l) => (
-            <Nav.Link key={l.href} href={l.href} active={active === l.href}>
+            <Nav.Link
+              key={l.href}
+              href={l.href}
+              active={active === l.href}
+              {...(l.href.startsWith("#") ? {} : { target: "_blank", rel: "noreferrer" })}
+            >
               {l.label}
             </Nav.Link>
           ))}
