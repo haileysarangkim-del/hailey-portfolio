@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
 import { projects } from "@/data/portfolio";
 
@@ -9,7 +10,7 @@ export default function Projects() {
         <Row className="g-5 justify-content-center">
           {projects.slice(0, 4).map((p) => (
             <Col xs={6} lg={3} key={p.title}>
-              <a href={p.live} className="folder" aria-label={p.title}>
+              <Link href={`/projects/${p.slug}`} className="folder" aria-label={p.title}>
                 <div className="folder-art">
                   <span className="folder-back" />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -18,7 +19,7 @@ export default function Projects() {
                 </div>
                 <span className="folder-name">{p.title}</span>
                 <span className="folder-tags">{p.tags.join(" · ")}</span>
-              </a>
+              </Link>
             </Col>
           ))}
         </Row>

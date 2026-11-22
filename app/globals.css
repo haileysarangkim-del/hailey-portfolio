@@ -408,3 +408,145 @@ body::after {
   transform: scale(0.88);
   opacity: 0.7;
 }
+
+/* Case study pages */
+.case-top {
+  padding: 1.25rem 2.5rem;
+}
+
+.case {
+  max-width: 1000px;
+  padding-bottom: 5rem;
+}
+
+.case-back {
+  display: inline-block;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+}
+
+.case-back:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+}
+
+.case-intro {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.case-title {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.case-summary {
+  max-width: 34ch;
+}
+
+.case-period {
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.case-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.case-meta h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+}
+
+.case-meta p {
+  margin-bottom: 0.9rem;
+  color: rgba(30, 30, 47, 0.75);
+}
+
+.case-hero,
+.case-img {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(238, 110, 201, 0.22);
+}
+
+.case-section {
+  margin-top: 6rem;
+}
+
+.case-label {
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.case-heading {
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.case-body {
+  max-width: 62ch;
+  font-size: 1.1rem;
+  color: rgba(30, 30, 47, 0.8);
+}
+
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.case-stats div {
+  border: 1.5px solid rgba(238, 110, 201, 0.6);
+  background: rgba(238, 110, 201, 0.12);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.case-stat-value {
+  display: block;
+  font-style: italic;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.case-img {
+  margin-top: 2.5rem;
+}
+
+.case-end {
+  text-align: center;
+  font-style: italic;
+  color: var(--accent);
+  margin: 6rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .case-intro {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .case-top {
+    padding: 1rem 1.5rem;
+  }
+}
