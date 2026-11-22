@@ -219,7 +219,7 @@ body::after {
 .marquee {
   overflow: hidden;
   padding: 1.25rem 0;
-  margin: 0;
+  margin: 6rem 0 0;
   color: var(--accent);
 }
 
