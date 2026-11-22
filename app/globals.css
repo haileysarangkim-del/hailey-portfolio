@@ -89,13 +89,38 @@ body {
   -webkit-text-stroke: 1px var(--accent);
 }
 
-.site-nav .navbar-nav .nav-link:hover {
-  color: var(--accent-dark);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
+.site-nav .navbar-nav .nav-link {
+  position: relative;
 }
 
+/* underline that slides in from the left on hover and out to the right */
+.site-nav .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: -6px;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s ease;
+}
+
+.site-nav .navbar-nav .nav-link:hover {
+  color: var(--accent-dark);
+}
+
+.site-nav .navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav .navbar-nav .nav-link::after {
+    transition: none;
+  }
+}
 .logo-star {
   width: 72px;
   height: 72px;
