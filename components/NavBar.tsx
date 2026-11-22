@@ -5,7 +5,6 @@ import { Nav, Navbar } from "react-bootstrap";
 const links = [
   { href: "#projects", label: "my work" },
   { href: "#about", label: "about" },
-  { href: "#skills", label: "certie" },
   { href: "/resume.pdf", label: "resume" },
 ];
 

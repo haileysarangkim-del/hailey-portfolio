@@ -15,11 +15,6 @@ export interface Profile {
   socials: Social[];
 }
 
-export interface Skill {
-  name: string;
-  level: number;
-}
-
 export interface Stat {
   value: string;
   label: string;
@@ -69,17 +64,6 @@ export const profile: Profile = {
     { label: "Email", icon: "bi-envelope", href: "mailto:hello@example.com" },
   ],
 };
-
-export const skills: Skill[] = [
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 88 },
-  { name: "Next.js", level: 82 },
-  { name: "HTML & CSS", level: 92 },
-  { name: "Bootstrap", level: 90 },
-  { name: "Node.js", level: 70 },
-  { name: "Git", level: 80 },
-  { name: "UI Design", level: 78 },
-];
 
 const placeholderSections = (image: string): CaseSection[] => [
   {
