@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: #eef3f7;
+  background: #f6f1ec;
   color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -152,36 +152,36 @@ body {
 .blob {
   position: absolute;
   border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
-  filter: blur(55px);
+  filter: blur(90px);
   will-change: transform, border-radius;
 }
 
 .blob-1 {
-  width: 55vmax;
-  height: 48vmax;
+  width: 62vmax;
+  height: 54vmax;
   left: -15vmax;
   bottom: -18vmax;
-  background: #bfeafa;
+  background: #d4ecf7;
   animation: blob-move-1 26s ease-in-out infinite alternate,
     blob-morph 17s ease-in-out infinite alternate;
 }
 
 .blob-2 {
-  width: 50vmax;
-  height: 44vmax;
+  width: 56vmax;
+  height: 50vmax;
   right: -14vmax;
   top: -16vmax;
-  background: #a9cde1;
+  background: #cfe3ee;
   animation: blob-move-2 30s ease-in-out infinite alternate,
     blob-morph 21s ease-in-out infinite alternate-reverse;
 }
 
 .blob-3 {
-  width: 42vmax;
-  height: 38vmax;
+  width: 52vmax;
+  height: 46vmax;
   left: -10vmax;
   top: -14vmax;
-  background: #fff1e6;
+  background: #fff6ee;
   animation: blob-move-3 24s ease-in-out infinite alternate,
     blob-morph 19s ease-in-out infinite alternate;
 }
@@ -191,31 +191,31 @@ body {
   height: 30vmax;
   left: 35vw;
   top: 30vh;
-  background: #cdeffc;
+  background: #dcf0f9;
   opacity: 0.85;
   animation: blob-move-4 28s ease-in-out infinite alternate,
     blob-morph 23s ease-in-out infinite alternate-reverse;
 }
 
 .blob-5 {
-  width: 30vmax;
-  height: 28vmax;
+  width: 40vmax;
+  height: 36vmax;
   right: 5vw;
   bottom: -10vmax;
-  background: #fde6dc;
+  background: #fcefe6;
   animation: blob-move-5 22s ease-in-out infinite alternate,
     blob-morph 15s ease-in-out infinite alternate;
 }
 
 @keyframes blob-move-1 {
   to {
-    transform: translate(45vw, -35vh) scale(1.1);
+    transform: translate(26vw, -22vh) scale(1.1);
   }
 }
 
 @keyframes blob-move-2 {
   to {
-    transform: translate(-40vw, 45vh) scale(0.9);
+    transform: translate(-24vw, 30vh) scale(0.95);
   }
 }
 
@@ -227,7 +227,7 @@ body {
 
 @keyframes blob-move-4 {
   to {
-    transform: translate(-30vw, -25vh) rotate(60deg) scale(1.1);
+    transform: translate(-20vw, -16vh) rotate(60deg) scale(1.1);
   }
 }
 
