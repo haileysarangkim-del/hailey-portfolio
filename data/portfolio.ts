@@ -86,4 +86,13 @@ export const projects: Project[] = [
     live: "#",
     code: "#",
   },
+  {
+    title: "Project Four",
+    description:
+      "One more space to show off your work. Swap in a real title, image and links.",
+    tags: ["Figma", "UX"],
+    image: "https://placehold.co/800x500/74b9ff/ffffff?text=Project+Four",
+    live: "#",
+    code: "#",
+  },
 ];
