@@ -174,18 +174,4 @@ export const projects: Project[] = [
     skills: ["Strategy", "Branding", "Analytics"],
     sections: placeholderSections(img("e17055", "Project+Three")),
   },
-  {
-    slug: "project-four",
-    title: "Project Four",
-    summary:
-      "A one-sentence summary of what this project is and the problem it solves.",
-    description: "One more space to show off your work.",
-    tags: ["Figma", "UX"],
-    image: img("74b9ff", "Project+Four"),
-    period: "oct 2025 - dec 2025",
-    role: "UX Designer",
-    team: "Team name",
-    skills: ["Usability Testing", "Prototyping", "Research"],
-    sections: placeholderSections(img("74b9ff", "Project+Four")),
-  },
 ];

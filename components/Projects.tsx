@@ -8,8 +8,8 @@ export default function Projects() {
       <Container>
         <h2 className="visually-hidden">My work</h2>
         <Row className="g-5 justify-content-center">
-          {projects.slice(0, 4).map((p) => (
-            <Col xs={6} lg={3} key={p.title}>
+          {projects.map((p) => (
+            <Col xs={6} md={4} key={p.title}>
               <Link href={`/projects/${p.slug}`} className="folder" aria-label={p.title}>
                 <div className="folder-art">
                   <span className="folder-back" />
