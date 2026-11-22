@@ -75,17 +75,17 @@ body {
 
 .site-nav .navbar-nav .nav-link {
   color: var(--accent);
+  -webkit-text-stroke: 0;
   font-style: italic;
   font-size: 1.4rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-/* hover / focus / current section: hollow pink outline text */
+/* hover (and keyboard focus): hollow pink outline text */
 .site-nav .navbar-nav .nav-link:hover,
-.site-nav .navbar-nav .nav-link:focus,
-.site-nav .navbar-nav .nav-link:active,
-.site-nav .navbar-nav .nav-link.active {
+.site-nav .navbar-nav .nav-link:focus-visible,
+.site-nav .navbar-nav .nav-link:active {
   color: transparent;
   -webkit-text-stroke: 1px var(--accent);
 }
