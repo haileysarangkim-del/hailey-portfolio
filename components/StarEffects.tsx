@@ -28,5 +28,22 @@ export default function StarEffects() {
     };
   }, []);
 
-  return null;
+  // Shared animated gradient used as the star fill while a star spins.
+  return (
+    <svg
+      width="0"
+      height="0"
+      aria-hidden="true"
+      style={{ position: "absolute" }}
+      focusable="false"
+    >
+      <defs>
+        <linearGradient id="star-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop className="star-stop star-stop-1" offset="0" />
+          <stop className="star-stop star-stop-2" offset="0.5" />
+          <stop className="star-stop star-stop-3" offset="1" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
 }

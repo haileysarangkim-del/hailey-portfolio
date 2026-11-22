@@ -600,23 +600,41 @@ body::after {
   }
 }
 
-/* polygons flash the nav hover pink while they spin */
+/* spinning stars are filled with a shifting pink / lilac / sky gradient */
 .spin-star.is-spinning {
-  animation-name: star-spin, star-fill;
+  fill: url(#star-gradient);
 }
 
-@keyframes star-fill {
-  20%,
-  80% {
-    fill: var(--accent-dark);
+.star-stop {
+  stop-color: #ee6ec9;
+  animation: star-stop-shift 1.4s linear infinite;
+}
+
+.star-stop-2 {
+  animation-delay: -0.47s;
+}
+
+.star-stop-3 {
+  animation-delay: -0.93s;
+}
+
+@keyframes star-stop-shift {
+  0%,
+  100% {
+    stop-color: #ee6ec9;
+  }
+  33% {
+    stop-color: #b79cff;
+  }
+  66% {
+    stop-color: #7fd8f7;
   }
 }
 
-/* the logo is an image, so darken it slightly instead */
+/* the logo is an image, so shift its hue instead */
 @keyframes star-tint {
-  20%,
-  80% {
-    filter: brightness(0.88);
+  50% {
+    filter: hue-rotate(-80deg) saturate(1.15);
   }
 }
 
