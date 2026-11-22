@@ -239,10 +239,6 @@ body::after {
   animation-direction: reverse;
 }
 
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
 .marquee-group {
   display: flex;
   flex-shrink: 0;
