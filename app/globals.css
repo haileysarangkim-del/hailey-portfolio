@@ -140,14 +140,54 @@ body {
 }
 
 /* film grain */
+/* Moving gradient background: each color blob drifts on its own loop. */
+@property --a-x { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --a-y { syntax: "<percentage>"; inherits: false; initial-value: 100%; }
+@property --b-x { syntax: "<percentage>"; inherits: false; initial-value: 100%; }
+@property --b-y { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --c-x { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@property --c-y { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(ellipse at 0% 100%, #c9effb 0%, transparent 55%),
-    radial-gradient(ellipse at 100% 0%, #bcd5e2 0%, transparent 60%),
-    radial-gradient(ellipse at 0% 0%, #fdf6f0 0%, transparent 50%), #eef3f7;
+  background: radial-gradient(
+      ellipse at var(--a-x) var(--a-y),
+      #c9effb 0%,
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse at var(--b-x) var(--b-y),
+      #bcd5e2 0%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse at var(--c-x) var(--c-y),
+      #fdf6f0 0%,
+      transparent 70%
+    ),
+    #eef3f7;
+  animation: blob-a-x 19s ease-in-out infinite alternate,
+    blob-a-y 23s ease-in-out infinite alternate,
+    blob-b-x 27s ease-in-out infinite alternate,
+    blob-b-y 21s ease-in-out infinite alternate,
+    blob-c-x 25s ease-in-out infinite alternate,
+    blob-c-y 17s ease-in-out infinite alternate;
+}
+
+@keyframes blob-a-x { to { --a-x: 40%; } }
+@keyframes blob-a-y { to { --a-y: 70%; } }
+@keyframes blob-b-x { to { --b-x: 65%; } }
+@keyframes blob-b-y { to { --b-y: 35%; } }
+@keyframes blob-c-x { to { --c-x: 45%; } }
+@keyframes blob-c-y { to { --c-y: 40%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
 }
 
 body::after {
