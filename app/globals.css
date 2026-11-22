@@ -99,7 +99,7 @@ body {
   position: absolute;
   left: 1rem;
   right: 1rem;
-  bottom: -6px;
+  bottom: 0.2rem;
   height: 1.5px;
   background: currentColor;
   transform: scaleX(0);
