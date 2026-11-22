@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
+import Marquee from "@/components/Marquee";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
   return (
     <section id="projects" className="section projects">
+      <h2 className="visually-hidden">My work</h2>
+      <Marquee text="my work" />
       <Container>
-        <h2 className="visually-hidden">My work</h2>
         <Row className="g-5 justify-content-center">
           {projects.map((p) => (
             <Col xs={6} md={4} key={p.title}>

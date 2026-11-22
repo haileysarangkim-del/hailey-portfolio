@@ -256,7 +256,7 @@ body::after {
 .marquee {
   overflow: hidden;
   padding: 1.25rem 0;
-  margin: 3rem 0 0;
+  margin: 3rem 0 7.5rem;
   color: var(--accent);
 }
 
@@ -330,7 +330,11 @@ body::after {
 
 /* Mac-style folders for the project showcase */
 .projects {
-  padding-top: 9rem;
+  display: flow-root;
+  padding-top: 0;
+  padding-bottom: 14rem;
+  /* clicking "my work" lands with the banner about a tenth down the screen */
+  scroll-margin-top: 6vh;
 }
 
 .folder {
