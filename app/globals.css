@@ -218,7 +218,7 @@ body::after {
 /* Marquee banner */
 .marquee {
   overflow: hidden;
-  padding: 0.75rem 0;
+  padding: 1.25rem 0;
   margin: 0;
   color: var(--accent);
 }
@@ -249,7 +249,7 @@ body::after {
   padding-right: 1.5rem;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
   line-height: 1.15;
   white-space: nowrap;
 }

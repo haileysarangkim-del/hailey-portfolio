@@ -13,11 +13,11 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
+        <Marquee text="my work" />
         <About />
         <Skills />
         <Projects />
         <Contact />
-        <Marquee text="my work" />
       </main>
       <Footer />
     </>
