@@ -7,7 +7,10 @@ export default function About() {
       <Container>
         <Row className="gy-4">
           <Col md={4}>
-            <h2 className="section-title">About me</h2>
+            <h2 className="m-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/about-title.png" alt="About" className="about-title-img" />
+            </h2>
           </Col>
           <Col md={8}>
             {profile.about.map((p, i) => (

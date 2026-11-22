@@ -764,3 +764,9 @@ body::after {
     --bs-gutter-x: 2rem;
   }
 }
+
+.about-title-img {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+}
