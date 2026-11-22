@@ -108,7 +108,7 @@ body {
 }
 
 .site-nav .navbar-nav .nav-link:hover {
-  color: var(--accent-dark);
+  color: #7fd8f7;
 }
 
 .site-nav .navbar-nav .nav-link:hover::after {
