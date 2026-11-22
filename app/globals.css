@@ -352,7 +352,7 @@ body::after {
   position: absolute;
   inset: 8% 0 0 0;
   border-radius: 14px;
-  background: #e25fb8;
+  background: rgba(226, 95, 184, 0.55);
   border: 0;
 }
 
@@ -365,7 +365,7 @@ body::after {
   height: 16%;
   border: 0;
   border-radius: 12px 12px 0 0;
-  background: #e25fb8;
+  background: rgba(226, 95, 184, 0.55);
 }
 
 /* project preview peeking out of the folder */
@@ -382,7 +382,7 @@ body::after {
   border-radius: 8px;
 }
 
-/* solid front flap */
+/* semi-opaque front flap */
 .folder-front {
   position: absolute;
   z-index: 2;
@@ -391,7 +391,9 @@ body::after {
   bottom: 0;
   height: 68%;
   border-radius: 14px;
-  background: #ee6ec9;
+  background: rgba(238, 110, 201, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   transform-origin: bottom;
   transition: transform 0.3s ease;
 }
