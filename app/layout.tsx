@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import StarEffects from "@/components/StarEffects";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-bs-theme="light">
       <body>
+        <BackgroundBlobs />
         <StarEffects />
         {children}
       </body>

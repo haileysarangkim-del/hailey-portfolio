@@ -140,52 +140,111 @@ body {
 }
 
 /* film grain */
-/* Moving gradient background: each color blob drifts on its own loop. */
-@property --a-x { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
-@property --a-y { syntax: "<percentage>"; inherits: false; initial-value: 100%; }
-@property --b-x { syntax: "<percentage>"; inherits: false; initial-value: 100%; }
-@property --b-y { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
-@property --c-x { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
-@property --c-y { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
-
-body::before {
-  content: "";
+/* Floating background blobs */
+.bg-blobs {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(
-      ellipse at var(--a-x) var(--a-y),
-      #c9effb 0%,
-      transparent 78%
-    ),
-    radial-gradient(
-      ellipse at var(--b-x) var(--b-y),
-      #bcd5e2 0%,
-      transparent 80%
-    ),
-    radial-gradient(
-      ellipse at var(--c-x) var(--c-y),
-      #fdf6f0 0%,
-      transparent 70%
-    ),
-    #eef3f7;
-  animation: blob-a-x 19s ease-in-out infinite alternate,
-    blob-a-y 23s ease-in-out infinite alternate,
-    blob-b-x 27s ease-in-out infinite alternate,
-    blob-b-y 21s ease-in-out infinite alternate,
-    blob-c-x 25s ease-in-out infinite alternate,
-    blob-c-y 17s ease-in-out infinite alternate;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-@keyframes blob-a-x { to { --a-x: 40%; } }
-@keyframes blob-a-y { to { --a-y: 70%; } }
-@keyframes blob-b-x { to { --b-x: 65%; } }
-@keyframes blob-b-y { to { --b-y: 35%; } }
-@keyframes blob-c-x { to { --c-x: 45%; } }
-@keyframes blob-c-y { to { --c-y: 40%; } }
+.blob {
+  position: absolute;
+  border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
+  filter: blur(55px);
+  will-change: transform, border-radius;
+}
+
+.blob-1 {
+  width: 55vmax;
+  height: 48vmax;
+  left: -15vmax;
+  bottom: -18vmax;
+  background: #bfeafa;
+  animation: blob-move-1 26s ease-in-out infinite alternate,
+    blob-morph 17s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+  width: 50vmax;
+  height: 44vmax;
+  right: -14vmax;
+  top: -16vmax;
+  background: #a9cde1;
+  animation: blob-move-2 30s ease-in-out infinite alternate,
+    blob-morph 21s ease-in-out infinite alternate-reverse;
+}
+
+.blob-3 {
+  width: 42vmax;
+  height: 38vmax;
+  left: -10vmax;
+  top: -14vmax;
+  background: #fff1e6;
+  animation: blob-move-3 24s ease-in-out infinite alternate,
+    blob-morph 19s ease-in-out infinite alternate;
+}
+
+.blob-4 {
+  width: 34vmax;
+  height: 30vmax;
+  left: 35vw;
+  top: 30vh;
+  background: #cdeffc;
+  opacity: 0.85;
+  animation: blob-move-4 28s ease-in-out infinite alternate,
+    blob-morph 23s ease-in-out infinite alternate-reverse;
+}
+
+.blob-5 {
+  width: 30vmax;
+  height: 28vmax;
+  right: 5vw;
+  bottom: -10vmax;
+  background: #fde6dc;
+  animation: blob-move-5 22s ease-in-out infinite alternate,
+    blob-morph 15s ease-in-out infinite alternate;
+}
+
+@keyframes blob-move-1 {
+  to {
+    transform: translate(45vw, -35vh) scale(1.1);
+  }
+}
+
+@keyframes blob-move-2 {
+  to {
+    transform: translate(-40vw, 45vh) scale(0.9);
+  }
+}
+
+@keyframes blob-move-3 {
+  to {
+    transform: translate(50vw, 40vh) scale(1.15);
+  }
+}
+
+@keyframes blob-move-4 {
+  to {
+    transform: translate(-30vw, -25vh) rotate(60deg) scale(1.1);
+  }
+}
+
+@keyframes blob-move-5 {
+  to {
+    transform: translate(-45vw, -40vh) scale(1.2);
+  }
+}
+
+@keyframes blob-morph {
+  to {
+    border-radius: 42% 58% 40% 60% / 60% 42% 58% 40%;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  body::before {
+  .blob {
     animation: none;
   }
 }
