@@ -600,7 +600,7 @@ body::after {
   }
 }
 
-/* spinning stars are filled with a shifting pink / lilac / sky gradient */
+/* spinning stars are filled with a shifting pink / blue gradient */
 .spin-star.is-spinning {
   fill: url(#star-gradient);
 }
@@ -623,10 +623,7 @@ body::after {
   100% {
     stop-color: #ee6ec9;
   }
-  33% {
-    stop-color: #b79cff;
-  }
-  66% {
+  50% {
     stop-color: #55bde6;
   }
 }
