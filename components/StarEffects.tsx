@@ -20,9 +20,26 @@ export default function StarEffects() {
         (e.target as Element).classList.remove("is-spinning");
       }
     };
+    // Hero stars turn as the page scrolls (0.4 degrees per pixel).
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+    const onScroll = () => {
+      if (reduce.matches || frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        document.documentElement.style.setProperty(
+          "--star-rot",
+          `${window.scrollY * 0.4}deg`,
+        );
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("mouseover", onOver);
     document.addEventListener("animationend", onEnd);
     return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
       document.removeEventListener("mouseover", onOver);
       document.removeEventListener("animationend", onEnd);
     };

@@ -587,6 +587,11 @@ body::after {
   transform-origin: center;
 }
 
+/* the stars around the name turn with the page scroll */
+.hero .spin-star {
+  transform: rotate(var(--star-rot, 0deg));
+}
+
 .spin-star.is-spinning,
 .logo-star.is-spinning {
   animation: star-spin 0.7s ease;
@@ -600,6 +605,17 @@ body::after {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* hero stars start from their scroll angle, then complete one full turn */
+@keyframes star-spin-hero {
+  to {
+    transform: rotate(calc(var(--star-rot, 0deg) + 360deg));
+  }
+}
+
+.hero .spin-star.is-spinning {
+  animation-name: star-spin-hero;
 }
 
 /* spinning stars are filled with a shifting pink / blue gradient */
