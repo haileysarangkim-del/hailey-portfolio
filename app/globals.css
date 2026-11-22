@@ -82,12 +82,15 @@ body {
   padding-right: 1rem;
 }
 
-/* hover (and keyboard focus): hollow pink outline text */
-.site-nav .navbar-nav .nav-link:hover,
+/* hollow pink outline only while pressed (or keyboard-focused) */
 .site-nav .navbar-nav .nav-link:focus-visible,
 .site-nav .navbar-nav .nav-link:active {
   color: transparent;
   -webkit-text-stroke: 1px var(--accent);
+}
+
+.site-nav .navbar-nav .nav-link:hover {
+  color: var(--accent-dark);
 }
 
 .logo-star {
