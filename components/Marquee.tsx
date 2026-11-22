@@ -15,7 +15,7 @@ function Group({ text }: { text: string }) {
         <span className="marquee-item" key={i}>
           {text}
           <svg viewBox="0 0 100 100" className="marquee-star">
-            <polygon points={STAR} fill="currentColor" />
+            <polygon points={STAR} fill="currentColor" className="spin-star" />
           </svg>
         </span>
       ))}

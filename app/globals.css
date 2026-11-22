@@ -547,3 +547,30 @@ body::after {
     padding: 1rem 1.5rem;
   }
 }
+
+/* Stars do a little spin on hover */
+.spin-star {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.spin-star:hover {
+  animation: star-spin 0.7s ease;
+}
+
+.logo-star:hover {
+  animation: star-spin 0.7s ease;
+}
+
+@keyframes star-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-star:hover,
+  .logo-star:hover {
+    animation: none;
+  }
+}
