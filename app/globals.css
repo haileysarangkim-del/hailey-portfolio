@@ -379,7 +379,17 @@ body::after {
   white-space: nowrap;
 }
 
+/* peachy orange to pink ombre across each word */
+.marquee-text {
+  background: linear-gradient(90deg, #ffa57a 0%, #ff8fa0 50%, #ee6ec9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-right: 0.08em; /* keeps the italic edge from being clipped */
+}
+
 .marquee-star {
+  color: #fb8fa5;
   width: 0.45em;
   height: 0.45em;
   flex-shrink: 0;

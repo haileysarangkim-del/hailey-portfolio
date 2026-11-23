@@ -13,7 +13,7 @@ function Group({ text }: { text: string }) {
     <div className="marquee-group" aria-hidden="true">
       {Array.from({ length: REPEATS }, (_, i) => (
         <span className="marquee-item" key={i}>
-          {text}
+          <span className="marquee-text">{text}</span>
           <svg viewBox="0 0 100 100" className="marquee-star">
             <polygon points={STAR} fill="currentColor" className="spin-star" />
           </svg>
